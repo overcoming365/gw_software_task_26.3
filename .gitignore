@@ -1,0 +1,28 @@
+# Keil
+Objects/
+Listings/
+DebugConfig/
+Docs/
+
+# 编译文件
+*.o
+*.axf
+*.hex
+*.bin
+*.map
+*.lst
+
+# 临时文件
+*.bak
+*.tmp
+
+# 用户配置
+*.uvgui.*
+*.uvoptx
+
+
+# 其他
+.DS_Store
+Thumbs.db
+CLAUDE.md
+.spec-workflow/
