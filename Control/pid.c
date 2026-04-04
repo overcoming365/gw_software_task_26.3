@@ -4,14 +4,14 @@
 static int PID_Integral = 0;
 static int PID_LastError = 0;
 
-const int Speed_PID[3] = {250, 0, 30};  // Kp, Ki, Kd
+const int Speed_PID[3] = {1, 0, 0};  // Kp, Ki, Kd
 
 int Temp_To_Speed(u8 temp)
 {
 	int speed;
 	if (temp < 20) return 0;
-	if (temp > 40) return 3000;
-	speed = (int)(temp - 20) * 125 + 500;
+	if (temp > 40) return Max_PWM;
+	speed = (int)(temp - 20) * 155 + 500;
 	return speed;
 }
 

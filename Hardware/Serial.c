@@ -120,8 +120,12 @@ void USART1_IRQHandler(void)
 {
 	if (USART_GetITStatus(USART1, USART_IT_RXNE) == SET)
 	{
-		Serial_RxData = USART_ReceiveData(USART1);
-		Serial_RxFlag = 1;
+		uint8_t data = USART_ReceiveData(USART1);
+		if (Serial_RxFlag == 0)		
+		{
+			Serial_RxData = data;
+			Serial_RxFlag = 1;
+		}
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 	}
 }
